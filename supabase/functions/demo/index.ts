@@ -72,6 +72,18 @@ Deno.serve(async (req) => {
         }
       );
     }
+
+    const response = await fetch(Deno.env.get("DISCORD_WEBHOOK_URL") ?? "", {
+      body: JSON.stringify({
+        content: "hehehehe",
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+    console.log("🚀 ~ Deno.serve ~ response:", response);
+
     // Return successful response
     return new Response(
       JSON.stringify({
