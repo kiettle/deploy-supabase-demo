@@ -33,7 +33,7 @@ Deno.serve(async (req) => {
     }
     // Parse the incoming request body
     const user = await req.json();
-    console.log(">>> USER: ", user);
+    console.log(">>> USERRRRRRRRR: ", user);
     // Validate required fields
     if (!user.first_name || !user.last_name || !user.email) {
       return new Response(
